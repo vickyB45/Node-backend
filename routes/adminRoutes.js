@@ -1,12 +1,10 @@
 import express from "express";
-import jwt from "jsonwebtoken";
 import Submission from "../models/Submission.js";
 
 const router = express.Router();
 
 const ADMIN_EMAIL = "admin@kashitrip.in";
 const ADMIN_PASSWORD = "123456";
-const JWT_SECRET = "vickysecret";
 
 // 🔐 Admin login route
 router.post("/login", (req, res) => {

@@ -7,10 +7,21 @@ import connectDB from "./db/db.js";
 
 
 const app= express()
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://frontend-gold-beta-55.vercel.app", // ✅ your Vercel frontend domain
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173", // or whatever your frontend port is
-    credentials: true, // ⭐️ allows cookies
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: false, // ❌ cookies not used anymore
   })
 );
 app.use(express.json())
