@@ -3,6 +3,7 @@ import cors from "cors"
 import enquiryRoute from "./routes/enquiry.js"
 import adminRoutes from "./routes/adminRoutes.js"
 import cookieParser from "cookie-parser";
+import connectDB from "./db/db.js";
 
 
 const app= express()
@@ -15,6 +16,8 @@ app.use(
 app.use(express.json())
 app.use(cookieParser());
 
+
+connectDB();
 
 app.use("/api/enquiry",enquiryRoute)
 app.use("/api/admin", adminRoutes);
