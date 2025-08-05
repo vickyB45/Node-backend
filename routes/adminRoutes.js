@@ -3,14 +3,12 @@ import Submission from "../models/Submission.js";
 
 const router = express.Router();
 
-const ADMIN_EMAIL = "admin@kashitrip.in";
-const ADMIN_PASSWORD = "123456";
 
 // 🔐 Admin login route
 router.post("/login", (req, res) => {
   const { email, password } = req.body;
 
-  if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
+  if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
    
     return res.status(200).json({ message: "Login successful" });
   }
