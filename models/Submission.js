@@ -6,7 +6,8 @@ const submissionSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-  },
+  }, 
+  
   phone: {
     type: String,
     required: true,
