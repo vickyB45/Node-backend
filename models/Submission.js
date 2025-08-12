@@ -18,16 +18,6 @@ const submissionSchema = new mongoose.Schema({
   },
   date: {
     type: String,
-    required: true,
-  },
-  persons: {
-    type: Number,
-    required: true,
-    min: 1,
-  },
-  purpose: {
-    type: String,
-    required: true,
   },
   submittedAt: {
     type: Date,
