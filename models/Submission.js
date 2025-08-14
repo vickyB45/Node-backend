@@ -6,7 +6,7 @@ const submissionSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-  }, 
+  },  
   
   phone: {
     type: String,
@@ -19,6 +19,14 @@ const submissionSchema = new mongoose.Schema({
   },
   date: {
     type: String,
+  },
+  numberOfPeaople:{
+    type:Number,
+    default:1
+  },
+  message:{
+    type:String,
+    default:""
   },
   submittedAt: {
     type: Date,
