@@ -26,7 +26,7 @@ const submissionSchema = new mongoose.Schema({
   },
   message:{
     type:String,
-    default:""
+    default:"-"
   },
   submittedAt: {
     type: Date,
